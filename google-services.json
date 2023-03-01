@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "324984573830",
+    "project_id": "esoko-9e081",
+    "storage_bucket": "esoko-9e081.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:324984573830:android:073a2c9c41ff998b5a6607",
+        "android_client_info": {
+          "package_name": "com.example.esoko"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "324984573830-m92vic66n80sls450rtojhts7hf97lnm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkpOFyqIDwlZ5W50BoP1sEc-yuSKMNeOc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "324984573830-m92vic66n80sls450rtojhts7hf97lnm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

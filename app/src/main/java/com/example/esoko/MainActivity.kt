@@ -1,10 +1,13 @@
 package com.example.esoko
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.esoko.ui.login.LoginActivity
 
 class MainActivity : AppCompatActivity() {
     private lateinit var nameEditText: EditText
@@ -21,6 +24,13 @@ class MainActivity : AppCompatActivity() {
         itemEditText = findViewById(R.id.itemEditText)
         priceEditText = findViewById(R.id.priceEditText)
         displayTextView = findViewById(R.id.displayTextView)
+
+        val buttonClick = findViewById<Button>(R.id.btnLogin);
+        buttonClick.setOnClickListener{
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 
     fun addToTotal(view: View?) {
