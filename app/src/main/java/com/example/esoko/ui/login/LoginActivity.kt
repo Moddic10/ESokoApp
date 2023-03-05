@@ -8,6 +8,7 @@ import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.widget.EditText
@@ -15,6 +16,9 @@ import android.widget.Toast
 import com.example.esoko.databinding.ActivityLoginBinding
 
 import com.example.esoko.R
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class LoginActivity : AppCompatActivity() {
 
@@ -22,7 +26,10 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        val auth = FirebaseAuth.getInstance();
         super.onCreate(savedInstanceState)
+
+
 
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -35,8 +42,8 @@ class LoginActivity : AppCompatActivity() {
         loginViewModel = ViewModelProvider(this, LoginViewModelFactory())
             .get(LoginViewModel::class.java)
 
-        loginViewModel.loginFormState.observe(this@LoginActivity, Observer {
-            val loginState = it ?: return@Observer
+        loginViewModel.loginFormState.observe(this@LoginActivity, Observer { state ->
+            val loginState = state ?: return@Observer
 
             // disable login button unless both username / password is valid
             login.isEnabled = loginState.isDataValid
@@ -91,9 +98,28 @@ class LoginActivity : AppCompatActivity() {
                 false
             }
 
+            /**
+             * Login the user
+             * Not the best way though. The login functionality should be in the login repostory
+             */
             login.setOnClickListener {
                 loading.visibility = View.VISIBLE
-                loginViewModel.login(username.text.toString(), password.text.toString())
+
+                auth.signInWithEmailAndPassword(username.text.toString(), password.text.toString())
+                    .addOnCompleteListener() {
+
+                        if (it.isSuccessful) {
+                            loading.visibility = View.GONE
+                            Toast.makeText(applicationContext, "Succeeded", Toast.LENGTH_SHORT)
+                                .show()
+                            finish()
+                        } else {
+                            Toast.makeText(applicationContext, "errorString", Toast.LENGTH_SHORT)
+                                .show()
+                            loading.visibility = View.GONE
+                        }
+                    }
+
             }
         }
     }
