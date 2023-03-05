@@ -1,0 +1,204 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Grocery Store"
+        android:textSize="24sp"
+        android:gravity="center"
+        tools:ignore="HardcodedText" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp">
+
+        <ImageView
+            android:id="@+id/appleImageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/apples"
+            android:contentDescription="Apples"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/appleTextView"
+            android:layout_width="94dp"
+            android:layout_height="81dp"
+            android:text="\tApple\t\nKSh 15"
+            android:textSize="16sp"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/appleButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Add to Cart"
+            android:textSize="20sp"
+            tools:ignore="HardcodedText,DuplicateSpeakableTextCheck" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp">
+
+        <ImageView
+            android:id="@+id/orangeImageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:contentDescription="Oranges"
+            android:src="@drawable/oranges"
+            tools:ignore="HardcodedText,ImageContrastCheck" />
+
+        <TextView
+            android:id="@+id/orangeTextView"
+            android:layout_width="94dp"
+            android:layout_height="81dp"
+            android:text="\tOrange\t\nKSh 10"
+            android:textSize="16sp"
+            tools:ignore="HardcodedText,TextSizeCheck" />
+
+        <Button
+            android:id="@+id/orangeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Add to Cart"
+            android:textSize="20sp"
+            tools:ignore="HardcodedText,DuplicateSpeakableTextCheck" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp">
+
+        <ImageView
+            android:id="@+id/bananaImageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:contentDescription="Bananas"
+            android:src="@drawable/bananas"
+            tools:ignore="HardcodedText,ImageContrastCheck" />
+
+
+        <TextView
+            android:id="@+id/bananaTextView"
+            android:layout_width="94dp"
+            android:layout_height="81dp"
+            android:text="\tBanana\t\nKSh 10"
+            android:textSize="16sp"
+            tools:ignore="HardcodedText,TextSizeCheck" />
+
+        <Button
+            android:id="@+id/bananaButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Add to Cart"
+            android:textSize="20sp"
+            tools:ignore="HardcodedText,DuplicateSpeakableTextCheck" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp">
+
+        <ImageView
+            android:id="@+id/tomatoImageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/tomatoes"
+            android:contentDescription="Tomatoes"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/tomatoTextView"
+            android:layout_width="97dp"
+            android:layout_height="81dp"
+            android:text="\tTomato\t\nKSh 5"
+            android:textSize="16sp"
+            tools:ignore="HardcodedText,TextSizeCheck" />
+
+        <Button
+            android:id="@+id/tomatoButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Add to Cart"
+            android:textSize="20sp"
+            tools:ignore="HardcodedText,DuplicateSpeakableTextCheck" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp">
+
+        <ImageView
+            android:id="@+id/vegetableImageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/vegetables"
+            android:contentDescription="Vegetables"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/vegetableTextView"
+            android:layout_width="94dp"
+            android:layout_height="81dp"
+            android:text="\tVegetable\t\nKSh 15"
+            android:textSize="16sp"
+            tools:ignore="HardcodedText,TextSizeCheck" />
+
+        <Button
+            android:id="@+id/vegetableButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Add to Cart"
+            android:textSize="20sp"
+            tools:ignore="HardcodedText,DuplicateSpeakableTextCheck" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/totalPriceTextView"
+        android:layout_width="237dp"
+        android:layout_height="25dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="Total: Ksh 0.00"
+        android:textSize="20sp"
+        tools:ignore="HardcodedText,TextSizeCheck" />
+
+    <Button
+        android:id="@+id/cartButton"
+        android:layout_width="283dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:minHeight="48dp"
+        android:text="Cart: 0"
+        tools:ignore="HardcodedText,ObsoleteLayoutParam,TouchTargetSizeCheck" />
+</LinearLayout>
+
+
