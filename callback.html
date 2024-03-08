@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback Page</title>
+    <style>
+        /* CSS styles for the div container */
+        #callbackData {
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 80%;
+            max-width: 600px;
+            background-color: #f9f9f9;
+        }
+    </style>
+    <script>
+        // Function to parse query parameters from URL
+        function getQueryParams() {
+            var queryParams = {};
+            var queryString = window.location.search.substring(1);
+            var pairs = queryString.split('&');
+            for (var i = 0; i < pairs.length; i++) {
+                var pair = pairs[i].split('=');
+                queryParams[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1]);
+            }
+            return queryParams;
+        }
+
+        // Main function to handle callback response
+        function handleCallback() {
+            var queryParams = getQueryParams();
+            var callbackDataDiv = document.getElementById('callbackData');
+            var output = '';
+            // Iterate through query parameters and build output string
+            for (var key in queryParams) {
+                if (queryParams.hasOwnProperty(key)) {
+                    output += '<p><strong>' + key + ':</strong> ' + queryParams[key] + '</p>';
+                }
+            }
+            // Set the output inside the div container
+            callbackDataDiv.innerHTML = output;
+        }
+
+        // Call the function to handle callback on page load
+        window.onload = handleCallback;
+    </script>
+</head>
+<body>
+    <h1>Callback Page</h1>
+    <div id="callbackData">
+        <!-- Callback data will be inserted here -->
+    </div>
+    <!-- You can add any additional content here -->
+</body>
+</html>
